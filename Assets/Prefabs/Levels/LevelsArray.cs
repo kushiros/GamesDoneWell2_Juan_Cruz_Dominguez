@@ -8,10 +8,14 @@ public class LevelsArray : MonoBehaviour
     [SerializeField] GameObject[] myPrefabLevelArray;
     [SerializeField] private int actualLevel;
     [SerializeField] private int totalLevels;
+    [SerializeField] private int actualLevelUI;
+    [SerializeField] private TMPro.TMP_Text LevelUIText;
 
     private void Start()
     {
         actualLevel = 0;
+        actualLevelUI = 1;
+        LevelUIText.text = actualLevelUI.ToString();
         setTotalLevels();
         Instantiate(myPrefabLevelArray[actualLevel], new Vector3(0, 0, 0), Quaternion.identity);
     }
@@ -26,6 +30,8 @@ public class LevelsArray : MonoBehaviour
     public void updateNextLevel()
     {
         actualLevel = (actualLevel+1) % totalLevels;
+        actualLevelUI = actualLevelUI + 1;
+        LevelUIText.text = actualLevelUI.ToString();
         ChangeLevel();
         
 

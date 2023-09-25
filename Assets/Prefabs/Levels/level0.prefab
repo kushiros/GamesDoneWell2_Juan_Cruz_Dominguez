@@ -292,58 +292,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   shakeDuration: 1
   shakeStrength: 1
---- !u!1 &2273045514756819691
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4743149102451868152}
-  - component: {fileID: 4378265764305882018}
-  m_Layer: 0
-  m_Name: Student
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &4743149102451868152
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2273045514756819691}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 63.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1891539111454566038}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.1, y: 20.3}
-  m_SizeDelta: {x: 1, y: 1}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4378265764305882018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2273045514756819691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44fc3fcdf6eeb7a49adb1030fc10f70d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colorStart: {r: 0, g: 0.62352943, b: 0.04564844, a: 1}
-  colorEnd: {r: 0.35294116, g: 1, b: 0.41817474, a: 0}
-  colors:
-  - {fileID: 2655360380497259984}
 --- !u!1 &2451343092751555778
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,7 +717,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 634379693717689661}
-  - {fileID: 4743149102451868152}
   m_Father: {fileID: 1489807893361236864}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9034147737214883020
@@ -788,6 +735,7 @@ MonoBehaviour:
   - {fileID: 5112194458108895561}
   complete: 0
   toComplete: 0
+  progressBar: {fileID: 0}
 --- !u!1001 &3111610223751417174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -809,9 +757,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1570084693844377415, guid: 6ef456a550029fd428a9f6d03e07c467, type: 3}
+      propertyPath: studentGameObject
+      value: 
+      objectReference: {fileID: 6718388537634881008}
+    - target: {fileID: 1570084693844377415, guid: 6ef456a550029fd428a9f6d03e07c467, type: 3}
       propertyPath: students.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1570084693844377415, guid: 6ef456a550029fd428a9f6d03e07c467, type: 3}
+      propertyPath: students.Array.data[0]
+      value: 
+      objectReference: {fileID: 5112194458108895561}
     - target: {fileID: 5672057600178468469, guid: 6ef456a550029fd428a9f6d03e07c467, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -912,6 +868,10 @@ PrefabInstance:
       propertyPath: particleSystem
       value: 
       objectReference: {fileID: 7164480666419449930}
+    - target: {fileID: 8060233451480330894, guid: 6ef456a550029fd428a9f6d03e07c467, type: 3}
+      propertyPath: teacherMovementRotation
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 8084210372207043004, guid: 6ef456a550029fd428a9f6d03e07c467, type: 3}
       propertyPath: m_Name
       value: Teacher 1
@@ -939,6 +899,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1891539111454566038}
     m_Modifications:
+    - target: {fileID: 1755367331208237976, guid: e5f21ac464c0e704ea0a1731251d1861, type: 3}
+      propertyPath: <Arc>k__BackingField._value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755367331208237976, guid: e5f21ac464c0e704ea0a1731251d1861, type: 3}
+      propertyPath: <Arc>k__BackingField._isDirty
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755367331208237976, guid: e5f21ac464c0e704ea0a1731251d1861, type: 3}
+      propertyPath: <LineWidth>k__BackingField._value
+      value: 0.191
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755367331208237976, guid: e5f21ac464c0e704ea0a1731251d1861, type: 3}
+      propertyPath: <LineWidth>k__BackingField._isDirty
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755367331208237976, guid: e5f21ac464c0e704ea0a1731251d1861, type: 3}
+      propertyPath: <SegmentCount>k__BackingField._value
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755367331208237976, guid: e5f21ac464c0e704ea0a1731251d1861, type: 3}
+      propertyPath: <RemoveSegments>k__BackingField._value
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755367331208237976, guid: e5f21ac464c0e704ea0a1731251d1861, type: 3}
+      propertyPath: <SegmentCount>k__BackingField._isDirty
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755367331208237976, guid: e5f21ac464c0e704ea0a1731251d1861, type: 3}
+      propertyPath: <RemoveSegments>k__BackingField._isDirty
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2871156224122987695, guid: e5f21ac464c0e704ea0a1731251d1861, type: 3}
       propertyPath: m_Name
       value: Student
@@ -1058,3 +1050,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b20c5fd0bbd061b47ab487d36ce7b2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6718388537634881008 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2871156224122987695, guid: e5f21ac464c0e704ea0a1731251d1861, type: 3}
+  m_PrefabInstance: {fileID: 8855457408299358559}
+  m_PrefabAsset: {fileID: 0}

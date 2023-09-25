@@ -106,7 +106,6 @@ namespace RengeGames.HealthBars.Extensions {
         public static void SetGizmoIconEnabled(Type type, bool on) {
             if (SetIconEnabled == null) return;
             const int MONO_BEHAVIOR_CLASS_ID = 114; // https://docs.unity3d.com/Manual/ClassIDReference.html
-            SetIconEnabled.Invoke(null, new object[] { MONO_BEHAVIOR_CLASS_ID, type.Name, on ? 1 : 0 });
         }
 #endif
 	}

@@ -23,7 +23,6 @@ public class Shake : MonoBehaviour
 
     public void doShakeCamera()
     {
-            Debug.Log("entre al if");
             Camera.main.DOShakePosition(shakeDuration, shakeStrength, fadeOut: true);
       
     }

@@ -10,6 +10,8 @@ public class Teacher : MonoBehaviour
     [SerializeField] GameObject teacher;
 
     [SerializeField] TeacherMovementScript points;
+    [SerializeField] float teacherMovementSpeed=3;
+    [SerializeField] float teacherMovementRotation= 0.5f;
 
     int eventNumber;
 
@@ -66,17 +68,17 @@ public class Teacher : MonoBehaviour
         if(waiting == false) {
 
             
-            await transform.DOMove(points.getPosition(i), 3).AsyncWaitForCompletion();
+            await transform.DOMove(points.getPosition(i), teacherMovementSpeed).AsyncWaitForCompletion();
 
             if (teacher.transform.position == points.getPosition(2))
             {
                 Quaternion targetRotation = Quaternion.LookRotation(points.getPosition(i-1) - transform.position);
-                transform.DORotateQuaternion(targetRotation, 0.5f);
+                transform.DORotateQuaternion(targetRotation, teacherMovementRotation);
             }
 
             else if (teacher.transform.position == points.getPosition(1)) {
                 Quaternion targetRotation = Quaternion.LookRotation(points.getPosition(i+1) - transform.position);
-                transform.DORotateQuaternion(targetRotation, 0.5f);
+                transform.DORotateQuaternion(targetRotation, teacherMovementRotation);
             }
 
 

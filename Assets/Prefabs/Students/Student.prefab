@@ -53,7 +53,7 @@ MonoBehaviour:
   colorStart: {r: 0.6226415, g: 0.49781397, b: 0, a: 1}
   colorEnd: {r: 1, g: 0.3529412, b: 0.3529412, a: 0}
   colors:
-  - {fileID: 0}
+  - {fileID: 6790684602058388623}
 --- !u!1 &6790684602058388623
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toComplete: 5
   cheating: 0
+  graficalComplete: {fileID: 1755367331208237976}
 --- !u!1001 &1063591740873756462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -222,15 +223,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
       propertyPath: <Arc>k__BackingField._value
-      value: 0.685
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
       propertyPath: <Arc>k__BackingField._isDirty
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
+      propertyPath: <Radius>k__BackingField._value
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
+      propertyPath: <Radius>k__BackingField._isDirty
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
+      propertyPath: <Rotation>k__BackingField._value
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
       propertyPath: <LineWidth>k__BackingField._value
-      value: 0.099
+      value: 0.191
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
+      propertyPath: <Rotation>k__BackingField._isDirty
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
       propertyPath: <BorderWidth>k__BackingField._value
@@ -273,11 +290,27 @@ PrefabInstance:
       value: 0.8679245
       objectReference: {fileID: 0}
     - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
+      propertyPath: <SegmentCount>k__BackingField._value
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
       propertyPath: <BorderWidth>k__BackingField._isDirty
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
+      propertyPath: <RemoveSegments>k__BackingField._value
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
+      propertyPath: <SegmentCount>k__BackingField._isDirty
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
       propertyPath: <SegmentSpacing>k__BackingField._value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
+      propertyPath: <RemoveSegments>k__BackingField._isDirty
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
@@ -294,11 +327,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6348027364634604020, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6348027364634604020, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6348027364634604020, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
       propertyPath: m_LocalScale.z
@@ -353,6 +386,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
+--- !u!114 &1755367331208237976 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
+  m_PrefabInstance: {fileID: 1063591740873756462}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b872877891a7cf342803ea9745a0be0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6258343548611002074 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6348027364634604020, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}

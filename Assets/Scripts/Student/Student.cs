@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using RengeGames.HealthBars;
+using Unity.VisualScripting;
 
 public class Student : MonoBehaviour
 {
@@ -9,11 +11,15 @@ public class Student : MonoBehaviour
     [SerializeField]float toComplete = 1;
     float cheatingInterval = 0.5f;
     [SerializeField] bool cheating = false;
+    [SerializeField] RadialSegmentedHealthBar graficalComplete;
 
 
     // Update is called once per frame
 
-
+    private void Start()
+    {
+        setToCompleteGraphic();
+    }
 
     IEnumerator Cheating()
     {
@@ -28,7 +34,7 @@ public class Student : MonoBehaviour
             complete += cheatingInterval;
             LevelManager.instance.GetShakeCamera().doShakeCamera();
             LevelManager.instance.updateCheatingTotal(cheatingInterval);
-            Debug.Log(complete);
+            setCompleteGraphic();
             StartCoroutine(Cheating());
 
         }
@@ -57,5 +63,14 @@ public class Student : MonoBehaviour
     public float getCompleteTotal()
     {
         return complete;
+    }
+    public void setToCompleteGraphic()
+    {
+        graficalComplete.SetRemovedSegments(getToCompleteTotal());
+        graficalComplete.SetSegmentCount(getToCompleteTotal());
+    }
+    public void setCompleteGraphic()
+    {
+        graficalComplete.SetRemovedSegments(getToCompleteTotal()-getCompleteTotal());
     }
 }

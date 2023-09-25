@@ -1,3 +1,6 @@
+using Minimalist.Bar.Quantity;
+using Minimalist.Bar.UI;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,9 +22,15 @@ public class StudentArray : MonoBehaviour
     private int arrayPosition;
     [SerializeField] float complete = 0;
     [SerializeField] float toComplete;
+    [SerializeField] QuantityBhv progressBar;
     // Start is called before the first frame update
 
+    private void Start()
+    {
+        progressBar = FindAnyObjectByType<QuantityBhv>();
+        progressBar.FillAmount = complete;
 
+    }
     // Update is called once per frame
     void Update()
     {
@@ -44,8 +53,10 @@ public class StudentArray : MonoBehaviour
     }
     public void updateCompleteTotal(float addComplete)
     {
-        complete += addComplete;     
-        
+        complete += addComplete;
+        progressBar.FillAmount = complete/toComplete;
+
+
     }
 
     public void setToCompleteTotal()
