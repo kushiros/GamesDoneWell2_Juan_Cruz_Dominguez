@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class StudentArray : MonoBehaviour
 
-{ 
+{
     public static StudentArray studentArrayInstance;
     private void Awake()
     {
@@ -23,6 +23,8 @@ public class StudentArray : MonoBehaviour
     [SerializeField] float complete = 0;
     [SerializeField] float toComplete;
     [SerializeField] QuantityBhv progressBar;
+    bool cheaters;
+    
     // Start is called before the first frame update
 
     private void Start()
@@ -34,10 +36,19 @@ public class StudentArray : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (getCompleteTotal() >= getToCompleteTotal())
+        
+        if ((cheaters = allCheaters()) == false)
         {
             GameManager.instance.Win();
-            
+        }
+        else if  ((getCompleteTotal() >= getToCompleteTotal()) && (cheaters != allCheaters()))
+        {
+            GameManager.instance.Win();
+
+        }
+        else if (allExamsComplete())
+        {
+            GameManager.instance.Win();
         }
     }
 
@@ -54,14 +65,14 @@ public class StudentArray : MonoBehaviour
     public void updateCompleteTotal(float addComplete)
     {
         complete += addComplete;
-        progressBar.FillAmount = complete/toComplete;
+        progressBar.FillAmount = complete / toComplete;
 
 
     }
 
     public void setToCompleteTotal()
     {
-        
+
         foreach (Student student in studentArray)
         {
             toComplete += student.getToCompleteTotal();
@@ -81,5 +92,36 @@ public class StudentArray : MonoBehaviour
     public void setStudentOnArray(Student student)
     {
         studentArray[arrayPosition] = student;
+    }
+
+    public bool allCheaters()
+    {
+        bool allCheaters = false;
+
+        foreach (Student elemento in studentArray)
+        {
+            if (!elemento.getCheater())
+            {
+                allCheaters = true;
+                break; // Sale del bucle tan pronto como encuentra un elemento falso.
+            }
+        }
+
+        return allCheaters;
+    }
+    public bool allExamsComplete()
+    {
+        bool allComplete = true;
+
+        foreach (Student elemento in studentArray)
+        {
+            if (!elemento.getExamComplete())
+            {
+                allComplete = false;
+                break; // Sale del bucle tan pronto como encuentra un elemento falso.
+            }
+        }
+
+        return allComplete;
     }
 }

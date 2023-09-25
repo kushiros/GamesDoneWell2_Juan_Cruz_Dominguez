@@ -12,6 +12,8 @@ public class Student : MonoBehaviour
     float cheatingInterval = 0.5f;
     [SerializeField] bool cheating = false;
     [SerializeField] RadialSegmentedHealthBar graficalComplete;
+    bool cheater = false;
+    bool examComplete = false;
 
 
     // Update is called once per frame
@@ -23,20 +25,23 @@ public class Student : MonoBehaviour
 
     IEnumerator Cheating()
     {
-        if (complete >= toComplete)
-        {
-            
-            yield break;
-        }
-        yield return new WaitForSeconds(cheatingInterval);
-        if (complete < toComplete)
-        {
-            complete += cheatingInterval;
-            LevelManager.instance.GetShakeCamera().doShakeCamera();
-            LevelManager.instance.updateCheatingTotal(cheatingInterval);
-            setCompleteGraphic();
-            StartCoroutine(Cheating());
+        if (cheater==false) {
+            if (complete >= toComplete)
+            {
+                examComplete = true;
+                yield break;
+            }
+            yield return new WaitForSeconds(cheatingInterval);
+            if (complete < toComplete)
+            {
+                complete += cheatingInterval;
+                LevelManager.instance.GetShakeCamera().doShakeCamera();
+                LevelManager.instance.updateCheatingTotal(cheatingInterval);
+                setCompleteGraphic();
+                StartCoroutine(Cheating());
+                
 
+            }
         }
     }
 
@@ -72,5 +77,18 @@ public class Student : MonoBehaviour
     public void setCompleteGraphic()
     {
         graficalComplete.SetRemovedSegments(getToCompleteTotal()-getCompleteTotal());
+    }
+    public void setCheaterTrue()
+    {
+        cheater = true;
+        examComplete = true;
+    }
+    public bool getCheater()
+    {
+        return cheater;
+    }
+    public bool getExamComplete()
+    {
+        return examComplete;
     }
 }

@@ -7,8 +7,6 @@ public class TeacherCollision : MonoBehaviour
     [SerializeField] GameObject studentGameObject;
     [SerializeField] Student[] students;
 
-    [SerializeField] bool cheating = false;
-    [SerializeField] bool teacherCheating;
     void Start()
     {
         int i = 0;
@@ -30,7 +28,11 @@ public class TeacherCollision : MonoBehaviour
     {
         if (collision.collider.CompareTag("Student"))
         {
-            if(collision.gameObject.GetComponent<Student>().getCheating()) { GameManager.instance.Lose();  }
+            Student student = collision.gameObject.GetComponent<Student>();
+            if (student.getCheating()) {
+                student.setCheaterTrue();
+                
+            }
         }
     }
 
