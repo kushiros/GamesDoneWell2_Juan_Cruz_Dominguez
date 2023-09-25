@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
 
 
             }
-
+            Currency.instance.setCurrency(progressPercent);
             win.SetActive(true);
         }
     }
