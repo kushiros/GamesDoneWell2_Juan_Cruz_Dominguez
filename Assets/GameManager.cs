@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
 
-    [SerializeField] GameObject winCopy;
+    [SerializeField] GameObject winBackground;
     [SerializeField] GameObject win;
     [SerializeField] public TMPro.TMP_Text textProgress;
     Color color;
@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour
 
             }
             Currency.instance.setCurrency(progressPercent);
+            winBackground.SetActive(true);
             win.SetActive(true);
         }
     }
