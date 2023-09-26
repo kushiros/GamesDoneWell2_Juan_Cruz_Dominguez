@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-
-
+using Unity.VisualScripting;
 
 public class color : MonoBehaviour
 {
@@ -17,7 +16,6 @@ public class color : MonoBehaviour
 
     void Start()
     {
-        DOTween.Init();
         rend = GetComponent<Renderer>();
         for(int i= 0; i < colors.Length; i++)
         {
@@ -25,6 +23,11 @@ public class color : MonoBehaviour
             rend.material.color = colorStart;
         }
     }
+    public void setColor(Color _sendColor)
+    {
+        rend.material.DOColor(_sendColor,0.5f);
+        colors[0].GameObject().transform.DOFlip();
 
+    }
 
 }

@@ -66,9 +66,11 @@ public class GameManager : MonoBehaviour
 
 
             }
-            Currency.instance.setCurrency(progressPercent);
+            
             winBackground.SetActive(true);
             win.SetActive(true);
+            int _coins = (int)Mathf.Floor(progressPercent / 10);
+            Currency.instance.RewardPileOfCoin(_coins);
         }
     }
 

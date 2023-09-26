@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44fc3fcdf6eeb7a49adb1030fc10f70d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorStart: {r: 0.6226415, g: 0.49781397, b: 0, a: 1}
+  colorStart: {r: 0, g: 0.59607846, b: 0.73333335, a: 1}
   colorEnd: {r: 1, g: 0.3529412, b: 0.3529412, a: 0}
   colors:
   - {fileID: 6790684602058388623}
@@ -251,7 +251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
       propertyPath: <BorderWidth>k__BackingField._value
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
       propertyPath: <LineWidth>k__BackingField._isDirty
@@ -263,15 +263,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
       propertyPath: <InnerColor>k__BackingField._value.b
-      value: 0.14366055
+      value: 0.77582246
       objectReference: {fileID: 0}
     - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
       propertyPath: <InnerColor>k__BackingField._value.g
-      value: 1
+      value: 0.47353154
       objectReference: {fileID: 0}
     - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
       propertyPath: <InnerColor>k__BackingField._value.r
-      value: 0
+      value: 0.018500218
       objectReference: {fileID: 0}
     - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
       propertyPath: <PulseColor>k__BackingField._isDirty
@@ -294,7 +294,31 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
+      propertyPath: <BorderColor>k__BackingField._isDirty
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
+      propertyPath: <BorderColor>k__BackingField._value.b
+      value: 0.063234225
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
+      propertyPath: <BorderColor>k__BackingField._value.g
+      value: 0.063234225
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
+      propertyPath: <BorderColor>k__BackingField._value.r
+      value: 0.066037714
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
+      propertyPath: <BorderSpacing>k__BackingField._value
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
       propertyPath: <BorderWidth>k__BackingField._isDirty
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
+      propertyPath: <PulsateWhenLow>k__BackingField._value
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
@@ -307,6 +331,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
       propertyPath: <SegmentSpacing>k__BackingField._value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
+      propertyPath: <BorderSpacing>k__BackingField._isDirty
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}
+      propertyPath: <PulsateWhenLow>k__BackingField._isDirty
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1630006489264413878, guid: 41dd36208627fdc4095d4e1097d98437, type: 3}

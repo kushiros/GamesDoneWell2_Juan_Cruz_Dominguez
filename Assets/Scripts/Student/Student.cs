@@ -29,6 +29,7 @@ public class Student : MonoBehaviour
             if (complete >= toComplete)
             {
                 examComplete = true;
+                GetComponentInParent<color>().setColor(Color.green);
                 yield break;
             }
             yield return new WaitForSeconds(cheatingInterval);
