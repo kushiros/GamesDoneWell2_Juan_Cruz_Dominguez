@@ -5,8 +5,8 @@ using DG.Tweening;
 
 public class CameraHandler : MonoBehaviour
 {
-    public float dragSpeed = 80; // Aumenta para movimiento más rápido
-    public float tweenDuration = 0.3f; // Reduce para un movimiento más rápido
+    [SerializeField] float dragSpeed = 40; // Aumenta para movimiento más rápido
+    [SerializeField] float tweenDuration = 0.3f; // Reduce para un movimiento más rápido
 
     private Vector2 dragOrigin; // Posición de inicio del arrastre
     private bool isDragging = false;
