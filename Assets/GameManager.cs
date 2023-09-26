@@ -1,13 +1,8 @@
 using DG.Tweening;
 using Minimalist.Bar.Quantity;
-using RengeGames.HealthBars.Extensions;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+
 using UnityEngine;
-using UnityEngine.Assertions.Must;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +17,7 @@ public class GameManager : MonoBehaviour
     float progressPercent;
     private LevelsArray levelsArray;
     public bool winBool =false ;
+    Vector3 backgroundScale;
 
 
     private void Awake()
@@ -36,8 +32,9 @@ public class GameManager : MonoBehaviour
             {
             Destroy(gameObject);
         }
+        backgroundScale = winBackground.transform.localScale;
 
-        }
+    }
     // Start is called before the first frame update
     
 
@@ -46,31 +43,39 @@ public class GameManager : MonoBehaviour
     {
         if (!winBool)
         {
-            winBool = true;
-            progressPercent = Progress.Amount;
-            if (progressPercent >= 80f)
-            {
-                win.GetComponent<BouncingStars>().ThreeStars();
-            }
-            else if (progressPercent >= 60f)
-            {
-                win.GetComponent<BouncingStars>().TwoStars();
-            }
-            else if (progressPercent >= 40)
-            {
-                win.GetComponent<BouncingStars>().OneStar();
-            }
-            else
-            {
 
-
-
-            }
             
             winBackground.SetActive(true);
             win.SetActive(true);
+            
+            winBackground.transform.localScale = Vector3.zero;
             int _coins = (int)Mathf.Floor(progressPercent / 10);
-            Currency.instance.RewardPileOfCoin(_coins);
+            winBackground.transform.DOScale(backgroundScale, 0.3f).SetEase(Ease.OutBounce).OnComplete(() => {
+                DOTween.ClearCachedTweens();
+                winBool = true;
+                progressPercent = Progress.Amount;
+                if (progressPercent >= 80f)
+                {
+                    win.GetComponent<BouncingStars>().ThreeStars();
+                }
+                else if (progressPercent >= 60f)
+                {
+                    win.GetComponent<BouncingStars>().TwoStars();
+                }
+                else if (progressPercent >= 40)
+                {
+                    win.GetComponent<BouncingStars>().OneStar();
+                }
+                else
+                {
+
+
+
+                }
+                Currency.instance.RewardPileOfCoin(_coins); }) ;
+           
+            
+
         }
     }
 

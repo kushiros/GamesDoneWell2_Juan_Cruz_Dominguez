@@ -79,5 +79,14 @@ public class Currency : MonoBehaviour
         _totalCurrency += 10;
         total.text = _totalCurrency.ToString();
     }
+    public float getCurrency()
+    {
+        return _totalCurrency;
+    }
 
+    public void setCurrency(float addCurrency)
+    {
+        _totalCurrency += addCurrency ;
+        total.text = _totalCurrency.ToString();
+    }
 }

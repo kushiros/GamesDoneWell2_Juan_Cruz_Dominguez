@@ -92,4 +92,8 @@ public class Student : MonoBehaviour
     {
         return examComplete;
     }
+    public void setColor(Color color)
+    {
+        GetComponentInParent<color>().setColor(color);
+    }
 }
