@@ -11,6 +11,14 @@ public class CameraHandler : MonoBehaviour
     private Vector2 dragOrigin; // Posición de inicio del arrastre
     private bool isDragging = false;
 
+
+    void Start()
+    {
+        // Detectar la densidad de píxeles o resolución del dispositivo y ajustar dragSpeed en consecuencia
+        float scaleFactor = Screen.dpi / 800f; // Ajusta esto según tus necesidades
+        dragSpeed *= scaleFactor;
+    }
+
     void Update()
     {
         // Verifica si se toca la pantalla
