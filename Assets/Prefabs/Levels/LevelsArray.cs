@@ -30,6 +30,7 @@ public class LevelsArray : MonoBehaviour
 
     public void updateNextLevel()
     {
+
         actualLevel = (actualLevel+1) % totalLevels;
         actualLevelUI = actualLevelUI + 1;
         LevelUIText.text = actualLevelUI.ToString();
