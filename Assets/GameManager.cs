@@ -44,16 +44,14 @@ public class GameManager : MonoBehaviour
         if (!winBool)
         {
 
-            
+            winBool = true;
             winBackground.SetActive(true);
             win.SetActive(true);
-            
+            progressPercent = Progress.Amount;
             winBackground.transform.localScale = Vector3.zero;
             int _coins = (int)Mathf.Floor(progressPercent / 10);
             winBackground.transform.DOScale(backgroundScale, 0.3f).SetEase(Ease.OutBounce).OnComplete(() => {
-                DOTween.ClearCachedTweens();
-                winBool = true;
-                progressPercent = Progress.Amount;
+
                 if (progressPercent >= 80f)
                 {
                     win.GetComponent<BouncingStars>().ThreeStars();

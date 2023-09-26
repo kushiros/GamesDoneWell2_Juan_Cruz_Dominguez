@@ -6,6 +6,7 @@ using UnityEngine;
 public class LevelsArray : MonoBehaviour
 {
     [SerializeField] GameObject[] myPrefabLevelArray;
+    [SerializeField] GameObject level0;   
     [SerializeField] private int actualLevel;
     [SerializeField] private int totalLevels;
     [SerializeField] private int actualLevelUI;
@@ -17,7 +18,7 @@ public class LevelsArray : MonoBehaviour
         actualLevelUI = 1;
         LevelUIText.text = actualLevelUI.ToString();
         setTotalLevels();
-        Instantiate(myPrefabLevelArray[actualLevel], new Vector3(0, 0, 0), Quaternion.identity);
+        Instantiate(level0, new Vector3(0, 0, 0), Quaternion.identity);
     }
     private void ChangeLevel()
     {

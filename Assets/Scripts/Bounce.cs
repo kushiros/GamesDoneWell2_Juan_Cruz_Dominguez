@@ -13,9 +13,9 @@ public class Bounce : MonoBehaviour
     void Start()
     {
         _originalScale = transform.localScale;
-        _scaleTo = _originalScale *1.1f;
-        transform.DOScale(_scaleTo,2.0f)
-            .SetEase(Ease.InBounce)
+        _scaleTo = _originalScale *1.2f;
+        transform.DOScale(_scaleTo,0.7f)
+            .SetEase(Ease.InOutFlash)
             .SetLoops(-1,LoopType.Yoyo);
     }
 
