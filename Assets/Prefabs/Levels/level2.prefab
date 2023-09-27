@@ -773,6 +773,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragSpeed: 80
   tweenDuration: 0.3
+  minXZLimit: {x: 0, y: 0}
+  maxXZLimit: {x: 0, y: 0}
 --- !u!1 &7133290227627787103
 GameObject:
   m_ObjectHideFlags: 0
